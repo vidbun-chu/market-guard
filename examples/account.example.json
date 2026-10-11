@@ -1,0 +1,18 @@
+{
+  "date": "示例快照",
+  "_comment": "本文件为示例账户快照，不含任何真实账户数据。字段说明见 docs/USAGE.md。",
+  "account": {
+    "totalAsset": 130000.0,
+    "netAsset": 100000.0,
+    "totalDebt": 30000.0,
+    "marketValue": 152000.0,
+    "available": 0.0
+  },
+  "holdings": [
+    {"code": "600519", "name": "示例蓝筹", "shares": 100, "price": 1680.0, "dayRate": -0.42},
+    {"code": "000858", "name": "示例消费", "shares": 1000, "price": 145.0, "dayRate": 0.85},
+    {"code": "300750", "name": "示例成长", "shares": 2000, "price": 62.0, "dayRate": -2.31},
+    {"code": "601318", "name": "示例保险", "shares": 1500, "price": 48.5, "dayRate": 0.12},
+    {"code": "000651", "name": "示例科技", "shares": 3000, "price": 33.2, "dayRate": -1.08}
+  ]
+}
