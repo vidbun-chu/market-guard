@@ -3,7 +3,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/market-guard.svg)](https://pypi.org/project/market-guard/)
 [![Python versions](https://img.shields.io/pypi/pyversions/market-guard.svg)](https://pypi.org/project/market-guard/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Tests](https://github.com/YOUR_NAME/market_guard/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_NAME/market_guard/actions/workflows/ci.yml)
+[![Tests](https://github.com/vidbun-chu/market_guard/actions/workflows/ci.yml/badge.svg)](https://github.com/vidbun-chu/market_guard/actions/workflows/ci.yml)
 
 账户级风控与趋势工具包 —— 把"凭感觉盯盘"变成"按纪律盯盘"。
 
