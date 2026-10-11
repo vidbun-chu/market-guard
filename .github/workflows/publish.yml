@@ -1,0 +1,41 @@
+name: Publish to PyPI
+
+# 触发方式：在 GitHub 上打 tag（推荐），或手动 dispatch
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write          # PyPI 信任发布（OIDC），无需存 API Token
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 确认版本号与 tag 一致
+        run: |
+          VERSION=$(python -c "import market_guard; print(market_guard.__version__)")
+          TAG="${GITHUB_REF#refs/tags/v}"
+          if [ "$VERSION" != "$TAG" ]; then
+            echo "版本不一致：pyproject=$VERSION, tag=$TAG"
+            exit 1
+          fi
+
+      - name: 构建分发包
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build
+
+      - name: 校验元数据
+        run: |
+          python -m pip install twine
+          python -m twine check dist/*
+
+      - name: 发布到 PyPI（OIDC 信任发布）
+        uses: pypa/gh-action-pypi-publish@release/v1
