@@ -1,0 +1,15 @@
+# 统一换行：避免 Windows 开发机提交 CRLF 污染 PyPI 的 Linux 包
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.cfg text eol=lf
+*.txt text eol=lf
+
+# 二进制
+*.png binary
+*.jpg binary
+*.gif binary
+*.whl binary
